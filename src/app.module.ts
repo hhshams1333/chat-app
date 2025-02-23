@@ -4,7 +4,8 @@ import { ChatRoom } from './chat/chat-room.entity';
 import { Message } from './chat/message.entity';
 import { ChatModule } from './chat/chat.module';
 import { AuthModule } from './auth/auth.module';
-import { ThrottlerModule } from '@nestjs/throttler';
+import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { APP_GUARD } from '@nestjs/core';
 
 
 @Module({
@@ -25,6 +26,12 @@ import { ThrottlerModule } from '@nestjs/throttler';
     }),
     ChatModule,
     AuthModule,
+  ],
+  providers: [
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerGuard,
+    },
   ],
 })
 export class AppModule { }
