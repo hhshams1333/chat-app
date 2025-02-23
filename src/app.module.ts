@@ -1,8 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ChatRoom } from './entity/chat-room.entity';
-import { Message } from './entity/message.entity';
+import { ChatRoom } from './chat/chat-room.entity';
+import { Message } from './chat/message.entity';
 import { ChatModule } from './chat/chat.module';
+import { AuthModule } from './auth/auth.module';
 
 
 @Module({
@@ -18,6 +19,7 @@ import { ChatModule } from './chat/chat.module';
       synchronize: true,
     }),
     ChatModule,
+    AuthModule,
   ],
 })
 export class AppModule { }

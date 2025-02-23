@@ -1,7 +1,7 @@
 import { Controller, Post, Body, Get, Param } from '@nestjs/common';
 import { ChatService } from './chat.service';
-import { ChatRoom } from 'src/entity/chat-room.entity';
-import { Message } from 'src/entity/message.entity';
+import { ChatRoom } from 'src/chat/chat-room.entity';
+import { Message } from 'src/chat/message.entity';
 
 @Controller('chat')
 export class ChatController {
