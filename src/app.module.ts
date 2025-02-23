@@ -7,6 +7,7 @@ import { AuthModule } from './auth/auth.module';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
 import { APP_GUARD } from '@nestjs/core';
 import * as dotenv from 'dotenv';
+import { User } from './auth/user/user.entity';
 
 dotenv.config();
 @Module({
@@ -22,7 +23,7 @@ dotenv.config();
       username: process.env.DB_USERNAME,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
-      entities: [ChatRoom, Message],
+      entities: [ChatRoom, Message, User],
       synchronize: true,
     }),
     ChatModule,
