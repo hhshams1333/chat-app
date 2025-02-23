@@ -1,10 +1,21 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ChatRoom } from './entity/chat-room.entity';
+import { Message } from './entity/message.entity';
+
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'localhost',
+      port: 5432,
+      username: 'username',
+      password: 'password',
+      database: 'chat_app',
+      entities: [ChatRoom, Message],
+      synchronize: true,
+    }),
+  ],
 })
-export class AppModule {}
+export class AppModule { }
