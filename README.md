@@ -16,7 +16,7 @@ Before setting up the application, ensure you have the following installed:
 - PostgreSQL (if running outside Docker)
 
 ## Environment Variables
-Create a `.env` file in the root directory and set up the required environment variables:
+Create a `.env` file (Or Simply rename .env.example -> .env) in the root directory and set up the required environment variables:
 
 ```env
 # Server
