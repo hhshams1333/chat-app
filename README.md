@@ -1,4 +1,3 @@
-# Instructions on How to Set Up and Run the Application
 
 ## Project Overview
 This project is a **NestJS-based chat and authentication system** that allows users to register, log in, and join chat rooms. It provides the following key features:
