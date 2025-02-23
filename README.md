@@ -1,3 +1,67 @@
+# Instructions on How to Set Up and Run the Application
+
+## Prerequisites
+Before setting up the application, ensure you have the following installed:
+- [Docker](https://www.docker.com/get-started)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- Node.js (if running outside Docker)
+- PostgreSQL (if running outside Docker)
+
+## Environment Variables
+Create a `.env` file in the root directory and set up the required environment variables:
+
+```env
+# Server
+THROTTLE_TTL=60
+THROTTLE_LIMIT=10
+
+# Database
+DB_HOST=database
+DB_PORT=5432
+DB_USERNAME=your_db_username
+DB_PASSWORD=your_db_password
+DB_DATABASE=your_db_name
+
+# JWT Secret
+JWT_SECRET=your_jwt_secret
+```
+
+## Running with Docker
+1. **Build and start the application:**
+   ```sh
+   docker-compose up --build
+   ```
+
+2. **Stopping the application:**
+   ```sh
+   docker-compose down
+   ```
+
+## Running Locally (Without Docker)
+1. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+
+2. **Run database migrations (if necessary):**
+   ```sh
+   npm run typeorm migration:run
+   ```
+
+3. **Start the application:**
+   ```sh
+   npm run start
+   ```
+
+4. The server will start at `http://localhost:3000`
+
+## Testing
+To run unit tests:
+```sh
+npm run test
+```
+
+
 # Chat and Authentication API Documentation
 
 ## Authentication API
