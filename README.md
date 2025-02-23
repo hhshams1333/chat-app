@@ -1,5 +1,14 @@
 # Instructions on How to Set Up and Run the Application
 
+## Project Overview
+This project is a **NestJS-based chat and authentication system** that allows users to register, log in, and join chat rooms. It provides the following key features:
+- **User Authentication**: Users can register and log in using JWT authentication.
+- **Chat Rooms**: Users can create chat rooms, join existing ones, and send messages.
+- **Rate Limiting**: The application uses throttling to prevent excessive requests.
+- **Security Measures**: Helmet is used for basic security enhancements.
+
+# Instructions on How to Set Up and Run the Application
+
 ## Prerequisites
 Before setting up the application, ensure you have the following installed:
 - [Docker](https://www.docker.com/get-started)
