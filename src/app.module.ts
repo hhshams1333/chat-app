@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ChatRoom } from './entity/chat-room.entity';
 import { Message } from './entity/message.entity';
+import { ChatModule } from './chat/chat.module';
 
 
 @Module({
@@ -16,6 +17,7 @@ import { Message } from './entity/message.entity';
       entities: [ChatRoom, Message],
       synchronize: true,
     }),
+    ChatModule,
   ],
 })
 export class AppModule { }
