@@ -20,7 +20,7 @@ Create a `.env` file (Or Simply rename .env.example -> .env) in the root directo
 
 ```env
 # Server
-THROTTLE_TTL=60
+THROTTLE_TTL=60000
 THROTTLE_LIMIT=10
 
 # Database
